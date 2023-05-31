@@ -9,6 +9,7 @@ param containerapps_step_4_name string = 'step-4-gateway-${salt}'
 param containerapps_step_5_name string = 'step-5-gateway-${salt}'
 param components_appinsightsgateway_name string = 'appinsightsgateway${salt}'
 param workspace_name string = 'workspacemathtrick3gateway${salt}'
+param minScale int = 0
 param managedEnvironment_name string = 'managedEnvironment-mathtrick3-${salt}'
 
 param tags object = {
@@ -103,7 +104,7 @@ resource containerapps_mt3_resource 'Microsoft.App/containerapps@2022-11-01-prev
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -178,7 +179,7 @@ resource containerapps_gateway_resource 'Microsoft.App/containerapps@2022-11-01-
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -237,7 +238,7 @@ resource containerapps_step_1_resource 'Microsoft.App/containerapps@2022-11-01-p
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -295,7 +296,7 @@ resource containerapps_step_2_resource 'Microsoft.App/containerapps@2022-11-01-p
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -353,7 +354,7 @@ resource containerapps_step_3_resource 'Microsoft.App/containerapps@2022-11-01-p
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -411,7 +412,7 @@ resource containerapps_step_4_resource 'Microsoft.App/containerapps@2022-11-01-p
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -464,7 +465,7 @@ resource containerapps_step_5_resource 'Microsoft.App/containerapps@2022-11-01-p
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }

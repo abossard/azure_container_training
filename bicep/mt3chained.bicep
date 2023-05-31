@@ -4,6 +4,7 @@ param containerapps_mt3_name string = 'mt3-chained-${salt}'
 param containerapps_step_1_name string = 'step-1-chained-${salt}'
 param containerapps_step_2_name string = 'step-2-chained-${salt}'
 param containerapps_step_3_name string = 'step-3-chained-${salt}'
+param minScale int = 0
 param containerapps_step_4_name string = 'step-4-chained-${salt}'
 param containerapps_step_5_name string = 'step-5-chained-${salt}'
 param components_appinsightschained_name string = 'appinsightschained${salt}'
@@ -98,7 +99,7 @@ resource containerapps_mt3_resource 'Microsoft.App/containerapps@2022-11-01-prev
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -157,7 +158,7 @@ resource containerapps_step_1_resource 'Microsoft.App/containerapps@2022-11-01-p
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -215,7 +216,7 @@ resource containerapps_step_2_resource 'Microsoft.App/containerapps@2022-11-01-p
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -273,7 +274,7 @@ resource containerapps_step_3_resource 'Microsoft.App/containerapps@2022-11-01-p
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -331,7 +332,7 @@ resource containerapps_step_4_resource 'Microsoft.App/containerapps@2022-11-01-p
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
@@ -384,7 +385,7 @@ resource containerapps_step_5_resource 'Microsoft.App/containerapps@2022-11-01-p
         }
       ]
       scale: {
-        minReplicas: 0
+        minReplicas: minScale
         maxReplicas: 10
       }
     }
