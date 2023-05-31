@@ -215,7 +215,6 @@ resource containerapps_step_1_resource 'Microsoft.App/containerapps@2022-11-01-p
       }
     }
     template: {
-      revisionSuffix: 'api'
       containers: [
         {
           image: 'docker.io/scubakiz/mt3gateway-step1'
