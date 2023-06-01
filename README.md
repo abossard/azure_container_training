@@ -22,7 +22,7 @@ All support `APPINSIGHTS_INSTRUMENTATIONKEY` to log to Application Insights
 
 #### MathTrick Gateway
 - `docker.io/scubakiz/mt3gateway-web`
-    - `MT3GatewayAPIEndpoint`: The endpoint where docker.io/scubakiz/mt3gateway-api is hosted
+    - `MT3GatewayAPIEndpoint`: The endpoint where docker.io/scubakiz/mt3gateway-gateway is hosted
 - `docker.io/scubakiz/mt3gateway-gateway`
     - `MT3GatewayStep1Endpoint`: The endpoint where docker.io/scubakiz/mt3gateway-step1 is hosted
     - `MT3GatewayStep2Endpoint`: The endpoint where docker.io/scubakiz/mt3gateway-step2 is hosted
