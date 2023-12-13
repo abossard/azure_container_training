@@ -14,10 +14,6 @@ param managedEnvironment_name string = 'managedEnvironment-mathtrick3-${salt}'
 param failureRate int = 5
 param retries int = 3
 
-param tags object = {
-  mode: 'gateway'
-}
-
 resource managedEnvironment_resource 'Microsoft.App/managedEnvironments@2022-11-01-preview' = {
   name: managedEnvironment_name
   location: location
