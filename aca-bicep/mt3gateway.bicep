@@ -11,6 +11,8 @@ param components_appinsightsgateway_name string = 'appinsightsgateway${salt}'
 param workspace_name string = 'workspacemathtrick3gateway${salt}'
 param minScale int = 0
 param managedEnvironment_name string = 'managedEnvironment-mathtrick3-${salt}'
+param failureRate int = 5
+param retries int = 3
 
 param tags object = {
   mode: 'gateway'
@@ -95,9 +97,17 @@ resource containerapps_mt3_resource 'Microsoft.App/containerapps@2022-11-01-prev
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightsgateway_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -170,9 +180,17 @@ resource containerapps_gateway_resource 'Microsoft.App/containerapps@2022-11-01-
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightsgateway_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -228,9 +246,17 @@ resource containerapps_step_1_resource 'Microsoft.App/containerapps@2022-11-01-p
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightsgateway_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -286,9 +312,17 @@ resource containerapps_step_2_resource 'Microsoft.App/containerapps@2022-11-01-p
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightsgateway_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -344,9 +378,17 @@ resource containerapps_step_3_resource 'Microsoft.App/containerapps@2022-11-01-p
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightsgateway_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -402,9 +444,17 @@ resource containerapps_step_4_resource 'Microsoft.App/containerapps@2022-11-01-p
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightsgateway_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -456,9 +506,17 @@ resource containerapps_step_5_resource 'Microsoft.App/containerapps@2022-11-01-p
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightsgateway_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
         }

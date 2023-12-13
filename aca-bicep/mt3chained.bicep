@@ -10,6 +10,8 @@ param containerapps_step_5_name string = 'step-5-chained-${salt}'
 param components_appinsightschained_name string = 'appinsightschained${salt}'
 param workspace_name string = 'workspacemathtrick3${salt}'
 param managedEnvironment_name string = 'managedEnvironment-mathtrick3-${salt}'
+param failureRate int = 5
+param retries int = 3
 
 resource managedEnvironment_resource 'Microsoft.App/managedEnvironments@2022-11-01-preview' = {
   name: managedEnvironment_name
@@ -90,9 +92,17 @@ resource containerapps_mt3_resource 'Microsoft.App/containerapps@2022-11-01-prev
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightschained_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -148,9 +158,17 @@ resource containerapps_step_1_resource 'Microsoft.App/containerapps@2022-11-01-p
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightschained_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -206,9 +224,17 @@ resource containerapps_step_2_resource 'Microsoft.App/containerapps@2022-11-01-p
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightschained_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -264,9 +290,17 @@ resource containerapps_step_3_resource 'Microsoft.App/containerapps@2022-11-01-p
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightschained_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -322,9 +356,17 @@ resource containerapps_step_4_resource 'Microsoft.App/containerapps@2022-11-01-p
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightschained_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
           probes: []
@@ -376,9 +418,17 @@ resource containerapps_step_5_resource 'Microsoft.App/containerapps@2022-11-01-p
               name: 'APPINSIGHTS_INSTRUMENTATIONKEY'
               value: components_appinsightschained_resource.properties.InstrumentationKey
             }
+            {
+              name: 'FAILURE_RATE'
+              value: '${failureRate}'
+            }
+            {
+              name: 'RETRIES'
+              value: '${retries}'
+            }
           ]
           resources: {
-            cpu: '0.25'
+            cpu: json('0.25')
             memory: '0.5Gi'
           }
         }
